@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>tire_sim_plugin</name>
+  <name>TireFrictionPlugin</name>
   <version>0.0.0</version>
-  <description>The tire_sim_plugin package</description>
+  <description>The TireFrictionPlugin package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
@@ -58,6 +58,7 @@
   <!-- The export tag contains other, unspecified, tags -->
   <export>
     <!-- Other tools can request additional information be placed here -->
-     <gazebo_ros plugin_path="${prefix}/lib" gazebo_media_path="${prefix}" />
+    <gazebo_ros gazebo_media_path="${prefix}" />
+    <gazebo_ros plugin_path="${prefix}/plugins"/>
   </export>
 </package>

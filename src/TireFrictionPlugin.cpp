@@ -58,6 +58,14 @@ TireFrictionPlugin::~TireFrictionPlugin()
 /////////////////////////////////////////////////
 void TireFrictionPlugin::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)
 {
+
+  if (!ros::isInitialized()) {
+    ROS_FATAL("ROS has not been initialized!");
+    return;
+  } else {
+    ROS_INFO("Starting TireFrictionPlugin");
+  }
+
   this->dataPtr->model = _model;
   GZ_ASSERT(_model, "TireFrictionPlugin _model pointer is NULL");
 

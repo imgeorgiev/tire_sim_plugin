@@ -14,8 +14,8 @@
  * limitations under the License.
  *
 */
-#ifndef GAZEBO_TIRE_FRICTION_PLUGIN_HH_
-#define GAZEBO_TIRE_FRICTION_PLUGIN_HH_
+#ifndef GAZEBO_TIRE_FRICTION_PLUGIN_H_
+#define GAZEBO_TIRE_FRICTION_PLUGIN_H_
 
 #include <memory>
 #include <sdf/sdf.hh>

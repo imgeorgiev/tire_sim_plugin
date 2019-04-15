@@ -14,8 +14,8 @@
  * limitations under the License.
  *
 */
-#ifndef _GAZEBO_TIRE_FRICTION_PLUGIN_PRIVATE_HH_
-#define _GAZEBO_TIRE_FRICTION_PLUGIN_PRIVATE_HH_
+#ifndef _GAZEBO_TIRE_FRICTION_PLUGIN_PRIVATE_H_
+#define _GAZEBO_TIRE_FRICTION_PLUGIN_PRIVATE_H_
 
 #include <string>
 

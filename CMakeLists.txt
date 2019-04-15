@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(tire_sim_plugin)
+project(TireFrictionPlugin)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 add_compile_options(-std=c++11)
@@ -18,6 +18,7 @@ find_package(catkin REQUIRED COMPONENTS
 find_package(gazebo REQUIRED)
 
 link_directories(${GAZEBO_LIBRARY_DIRS})
+# list(APPEND CMAKE_CXX_FLAGS "${GAZEBO_CXX_FLAGS}")
 
 include_directories(
   include
@@ -32,9 +33,7 @@ include_directories(
 ###########
 
 ## Declare a C++ library
-add_library(${PROJECT_NAME}
-  src/TireFrictionPlugin.cpp
-)
+add_library(${PROJECT_NAME} SHARED src/TireFrictionPlugin.cpp)
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(${PROJECT_NAME}
@@ -44,5 +43,15 @@ target_link_libraries(${PROJECT_NAME}
 catkin_package(
   DEPENDS roscpp gazebo_ros
   CATKIN_DEPENDS roscpp gazebo_ros
-  INCLUDE_DIRS include
+)
+
+install(TARGETS
+  ${PROJECT_NAME}
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  )
+
+  install(DIRECTORY src/
+   DESTINATION ${CATKIN_GLOBAL_INCLUDE_DESTINATION}
+   FILES_MATCHING PATTERN "*.h"
 )
